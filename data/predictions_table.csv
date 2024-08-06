@@ -1,0 +1,4 @@
+longitude,latitude,housing_median_age,total_rooms,total_bedrooms,population,households,median_income,ocean_proximity,predicted_price,timestamp
+-122.64,38.01,36.0,1336.0,258.0,678.0,249.0,5.5789,NEAR OCEAN,320201.58554043656,2024-08-06 10:02:02.093588
+-115.73,33.35,23.0,1586.0,448.0,338.0,182.0,1.2132,INLAND,58815.45033764739,2024-08-06 10:20:27.899659
+-117.96,33.89,24.0,1332.0,252.0,625.0,230.0,4.4375,<1H OCEAN,192575.77355634805,2024-08-06 10:21:35.680559
