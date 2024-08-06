@@ -31,7 +31,7 @@ class HousingParameters(BaseModel):
 def read_root():
     """ Root url """
     try:
-        return {"Hello": "Please browse the url http://127.0.0.1:8000/housing for Housing Predictions"}
+        return {"Hello": "Please browse the url http://127.0.0.1:8000/housing for Housing Predictions, http://127.0.0.1:8000/history for Predictions History and http://127.0.0.1:8000/graph for Graph"}
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
