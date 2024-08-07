@@ -31,7 +31,7 @@ class HousingParameters(BaseModel):
 def read_root():
     """ Root url """
     try:
-        return {"Hello": "Please browse the url http://127.0.0.1:8000/housing for Housing Predictions, http://127.0.0.1:8000/history for Predictions History and http://127.0.0.1:8000/graph for Graph"}
+        return FileResponse("frontend/root.html")
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
@@ -40,7 +40,7 @@ def read_root():
 def read_housing_parameters():
     """ Display form to capture inputs """
     try:
-        return FileResponse("housing_prediction_form.html")
+        return FileResponse("frontend/housing_prediction_form.html")
     except Exception as e:
         raise HTTPException(status_code=404, detail=str(e))
 
