@@ -12,7 +12,7 @@ from predictions_table import display_table
 app = FastAPI()
 
 # Load the model which is already trained
-MODEL_NAME = 'model.joblib'
+MODEL_NAME = '..\model.joblib'
 
 
 class HousingParameters(BaseModel):
