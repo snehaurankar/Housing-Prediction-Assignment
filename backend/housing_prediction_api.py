@@ -6,13 +6,13 @@ import joblib
 import pandas as pd
 from pydantic import BaseModel
 
-from predictions_table import display_table
+from housing_prices_dashboard.backend.predictions_table import data_visualisation, display_table
 
 # Initialize FastAPI app
 app = FastAPI()
 
 # Load the model which is already trained
-MODEL_NAME = '..\model.joblib'
+MODEL_NAME = 'housing_prices_dashboard\model.joblib'
 
 
 class HousingParameters(BaseModel):
@@ -32,7 +32,7 @@ class HousingParameters(BaseModel):
 def read_root():
     """ Root url """
     try:
-        return FileResponse("../frontend/root.html")
+        return FileResponse("housing_prices_dashboard/frontend/root.html")
 
     except Exception as e:
         raise HTTPException(status_code=404, detail=str(e))
@@ -41,7 +41,7 @@ def read_root():
 def read_housing_parameters():
     """ Display form to capture inputs """
     try:
-        return FileResponse("../frontend/housing_prediction_form.html")
+        return FileResponse("housing_prices_dashboard/frontend/housing_prediction_form.html")
     except Exception as e:
         raise HTTPException(status_code=404, detail=str(e))
 
@@ -92,6 +92,7 @@ def display_predictions():
 async def get_bar_graph():
     """ Serve the image file """
     try:
-        return FileResponse('../data/graph.png', media_type='image/png')
+        data_visualisation()
+        return FileResponse('housing_prices_dashboard/data/graph.png', media_type='image/png')
     except Exception as e:
         raise HTTPException(status_code=404, detail=str(e))
