@@ -14,7 +14,7 @@ def create_csv_file():
 
 def display_table():
     """ Display all the previously computed predictions """
-    df = pd.read_csv('../data/predictions_table.csv')
+    df = pd.read_csv('housing_prices_dashboard/data/predictions_table.csv')
 
     # Generate HTML table from DataFrame
     html_table = df.to_html(index=False, classes='table table-striped')
@@ -64,7 +64,3 @@ def data_visualisation():
     # Save the figure
     plt.savefig('graph.png', format='png')
     plt.close()
-
-# Run these functions as and when required
-# create_csv_file()
-# data_visualisation()
